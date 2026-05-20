@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relatório de Coaching — André Bruno | 2026-03-30 a 2026-04-05</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1020;--bg-2:#0f172a;--card:#121b34;--card-soft:#0f1a33;--text:#e2e8f0;--muted:#94a3b8;--accent:#5ea3ff;--accent-2:#22c55e;--accent-3:#f59e0b;--accent-4:#ef4444;--accent-run:#22c55e;--accent-ride:#f59e0b;--accent-swim:#38bdf8;--accent-strength:#a855f7;--shadow:0 18px 40px rgba(0,0,0,0.4)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Sora",sans-serif;background:var(--bg);color:var(--text)}
+    body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 10% 10%,rgba(94,163,255,0.18),transparent 45%),radial-gradient(circle at 80% 20%,rgba(34,197,94,0.12),transparent 45%),radial-gradient(circle at 50% 80%,rgba(245,158,11,0.14),transparent 50%);pointer-events:none;z-index:-1}
+    .wrap{max-width:1200px;margin:24px auto;padding:0 20px}
+    .hero{background:linear-gradient(135deg,#4f7cff,#6c5bd8);padding:24px;border-radius:20px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero::after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;background:rgba(255,255,255,0.12);border-radius:50%}
+    .hero h1{margin:0;font-family:"Space Grotesk",sans-serif;font-size:24px}
+    .hero p{margin:6px 0 0;color:#e2e8f0}
+    .hero-pill{background:rgba(255,255,255,0.2);padding:8px 16px;border-radius:999px;font-weight:600}
+    .back-link{display:inline-block;margin-bottom:14px;font-size:13px;color:#7dd3fc;text-decoration:none}
+    .section{margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:16px;box-shadow:var(--shadow);border:1px solid rgba(148,163,184,0.12)}
+    .grid{display:grid;gap:16px}
+    .grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .metric{background:var(--card-soft);padding:14px;border-radius:12px;text-align:center}
+    .metric .value{font-size:20px;font-weight:700}
+    .metric .label{font-size:11px;color:var(--muted)}
+    .performance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .stat-card{background:#151f3b;border-radius:14px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;min-height:120px}
+    .stat-value{font-size:28px;font-weight:700;color:var(--accent)}
+    .stat-label{font-size:12px;color:var(--muted);margin-top:6px}
+    .stat-pill{margin-top:10px;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#1f2a4a;font-size:11px;width:max-content}
+    .stat-note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.3}
+    .tsb-high{background:rgba(239,68,68,0.2);color:#ef4444}.tsb-med{background:rgba(245,158,11,0.2);color:#f59e0b}.tsb-low{background:rgba(148,163,184,0.2);color:#cbd5f5}.tsb-good{background:rgba(34,197,94,0.2);color:#22c55e}
+    .race-card{display:flex;align-items:center;gap:18px;background:#151f3b;border-radius:14px;padding:16px;margin-bottom:12px;border-left:4px solid transparent}
+    .race-card.priority-A{border-left-color:var(--accent-3)}.race-card.priority-B{border-left-color:var(--accent)}.race-card.priority-C{border-left-color:var(--accent-2)}
+    .race-days{width:70px;text-align:center}.race-days .days{font-size:26px;font-weight:700;color:#7dd3fc}.race-days .label{font-size:10px;color:var(--muted)}.race-days .sub{font-size:10px;color:var(--muted)}
+    .race-name{font-weight:600}.race-meta{color:var(--muted);font-size:12px}.race-badge{margin-left:auto;background:#1f2a4a;padding:6px 12px;border-radius:999px;font-size:11px}
+    .wellness-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+    .wellness-card{background:#151f3b;border-radius:12px;padding:14px;text-align:center}.wellness-card .value{font-size:22px;font-weight:700}.wellness-card .label{font-size:11px;color:var(--muted)}
+    .activity-card{background:#141f3a;border-radius:16px;padding:18px;margin-top:16px;border:1px solid rgba(148,163,184,0.12)}
+    .activity-card.activity-run{border-left:4px solid var(--accent-run)}.activity-card.activity-ride{border-left:4px solid var(--accent-ride)}.activity-card.activity-swim{border-left:4px solid var(--accent-swim)}.activity-card.activity-strength{border-left:4px solid var(--accent-strength)}
+    .activity-title{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+    .activity-icon{width:42px;height:42px;border-radius:12px;background:#1f2a4a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px}
+    .activity-icon svg{width:20px;height:20px}.activity-icon.run{background:rgba(34,197,94,0.2);color:#22c55e}.activity-icon.ride{background:rgba(245,158,11,0.2);color:#f59e0b}.activity-icon.swim{background:rgba(56,189,248,0.2);color:#38bdf8}.activity-icon.strength{background:rgba(168,85,247,0.2);color:#a855f7}
+    .activity-badge{margin-left:auto;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:600}
+    .quality-ok{background:rgba(34,197,94,0.2);color:#22c55e}.quality-low{background:rgba(148,163,184,0.2);color:#cbd5f5}.quality-high{background:rgba(245,158,11,0.2);color:#f59e0b}.quality-risk{background:rgba(239,68,68,0.2);color:#ef4444}
+    .activity-name{font-weight:600}.activity-date{font-size:12px;color:var(--muted)}
+    .activity-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:12px}
+    .analysis-block{background:#111827;border-left:4px solid #f59e0b;padding:16px;border-radius:12px}
+    .coach-card{background:linear-gradient(180deg,#0f274a 0%,#0f1f39 100%);border:1px solid rgba(94,163,255,0.25)}
+    .coach-header{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+    .coach-icon{width:44px;height:44px;border-radius:50%;background:#38bdf8;display:flex;align-items:center;justify-content:center;color:#0b1020;flex-shrink:0}
+    .coach-icon svg{width:22px;height:22px}
+    .coach-subtitle{font-size:12px;color:var(--muted)}
+    h2{margin:0 0 14px;font-family:"Space Grotesk",sans-serif}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back-link" href="../index.html">← Voltar ao dashboard</a>
+
+  <div class="hero">
+    <div>
+      <h1>Relatório de Coaching</h1>
+      <p>André Bruno | 2026-03-30 a 2026-04-05</p>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
+      <div class="hero-pill">Semana 2026-03</div>
+      <div class="hero-pill" style="background:rgba(0,0,0,0.3);font-size:12px">Atualizado: 11/04/2026, 19:24:30</div>
+    </div>
+  </div>
+
+  <section class="card section">
+    <h2>Performance da Semana</h2>
+    <div class="performance-grid">
+      <div class="stat-card">
+        <div class="stat-value">54.9</div>
+        <div class="stat-label">CTL (Fitness)</div>
+        <div class="stat-note">Forma física acumulada nos últimos 42 dias.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">58.1</div>
+        <div class="stat-label">ATL (Fadiga)</div>
+        <div class="stat-note">Carga de treino dos últimos 7 dias.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">-3.2</div>
+        <div class="stat-label">TSB (Forma)</div>
+        <div class="stat-pill tsb-low">Cansado</div>
+        <div class="stat-note">CTL - ATL. Positivo = descansado. Ideal +5 a +15 para provas.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">393</div>
+        <div class="stat-label">TSS Total</div>
+        <div class="stat-note">13 atividades na semana.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card section">
+    <h2>Wellness da Semana</h2>
+    <div class="wellness-grid">
+      <div class="wellness-card">
+        <div class="value">44ms</div>
+        <div class="label">HRV Médio</div>
+      </div>
+      <div class="wellness-card">
+        <div class="value">51bpm</div>
+        <div class="label">FC Repouso Médio</div>
+      </div>
+      <div class="wellness-card">
+        <div class="value">6.6h</div>
+        <div class="label">Sono Médio</div>
+      </div>
+      <div class="wellness-card">
+        <div class="value">106.5kg</div>
+        <div class="label">Peso</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card section">
+    <h2>Calendário de Provas</h2>
+    
+  <div class="race-card priority-B">
+    <div class="race-days">
+      <div class="days">15</div>
+      <div class="label">DIAS</div>
+      <div class="sub">2 sem</div>
+    </div>
+    <div class="race-info">
+      <div class="race-name">Troféu Brasil Santos</div>
+      <div class="race-meta">Olímpico | Prioridade B</div>
+    </div>
+    <div class="race-badge">04-26</div>
+  </div>
+  <div class="race-card priority-C">
+    <div class="race-days">
+      <div class="days">29</div>
+      <div class="label">DIAS</div>
+      <div class="sub">4 sem</div>
+    </div>
+    <div class="race-info">
+      <div class="race-name">DCTA Run Airport 10km</div>
+      <div class="race-meta">Corrida | Prioridade C</div>
+    </div>
+    <div class="race-badge">05-10</div>
+  </div>
+  <div class="race-card priority-B">
+    <div class="race-days">
+      <div class="days">106</div>
+      <div class="label">DIAS</div>
+      <div class="sub">15 sem</div>
+    </div>
+    <div class="race-info">
+      <div class="race-name">Meia Maratona SP</div>
+      <div class="race-meta">Corrida 21.1km | Prioridade B</div>
+    </div>
+    <div class="race-badge">07-26</div>
+  </div>
+  <div class="race-card priority-A">
+    <div class="race-days">
+      <div class="days">190</div>
+      <div class="label">DIAS</div>
+      <div class="sub">27 sem</div>
+    </div>
+    <div class="race-info">
+      <div class="race-name">IRONMAN 70.3 Floripa</div>
+      <div class="race-meta">70.3 | Prioridade A</div>
+    </div>
+    <div class="race-badge">10-18</div>
+  </div>
+  </section>
+
+  <section class="card section">
+    <h2>Análise do Coach</h2>
+    <div class="analysis-block coach-card" style="margin-top:0">
+      <div class="coach-header">
+        <div class="coach-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 110 10A5 5 0 0112 2zM4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700">Análise do Coach</div>
+          <div class="coach-subtitle">Claude — 2026-03-30 a 2026-04-05</div>
+        </div>
+      </div>
+      <div style="white-space:pre-wrap;line-height:1.7;color:#e2e8f0;font-size:14px">Relatório semanal completo — André Bruno
+Período analisado: 06/04/2026 a 11/04/2026 19:21 (semana ainda em andamento)
+Classificação: HOLD
+
+Resumo executivo
+Esta semana, até o momento, cumpriu melhor uma função de consolidação do que de construção agressiva. O volume e o TSS ficaram abaixo do planejado, mas o contexto fisiológico não sustentava um PUSH. Com HRV média da semana em 41.7ms, abaixo do baseline histórico de 45-47ms, e FC de repouso média em 50bpm, o organismo mostrou recuperação apenas parcial. Ao mesmo tempo, a execução dos treinos feitos foi majoritariamente boa, sobretudo nas corridas, com mecânica estável, cadência consistente e boa percepção subjetiva. O principal alerta veio da deriva cardíaca em sessões-chave, especialmente bike de quarta e corrida de quinta, o que aponta para fadiga residual, possível impacto de hidratação/temperatura e ainda baixa robustez para sustentar blocos mais densos nesta fase.
+
+Leitura macro da semana
+- TSS planejado: 420
+- TSS executado até agora: 246
+- Compliance parcial: 59%
+- CTL: 53.8
+- ATL: 53.4
+- TSB: +0.4
+- Sono médio: 7.1h
+- HRV média: 41.7ms
+- FC de repouso média: 50bpm
+
+Interpretação fisiológica
+O quadro geral é de fadiga controlada, não de colapso. O TSB levemente positivo mostra que a carga aguda deixou de pressionar tanto quanto nas semanas anteriores. Isso conversa com a redução de volume executado e com a sensação geral melhor em alguns treinos. Mas a HRV ainda abaixo do baseline indica que a recuperação sistêmica não está completa. Em português direto: o corpo já saiu da zona de estresse mais pesado, mas ainda não está no ponto ideal para subir carga com confiança.
+
+Isso combina com o momento da temporada. Faltam duas semanas para o Troféu Brasil. Então a leitura mais inteligente não é tentar “compensar” TSS perdido, e sim consolidar a forma, preservar a corrida, manter estímulos de qualidade bem dosados e chegar na semana da prova com sensação de perna viva, não drenada.
+
+Análise por sessão e por modalidade
+
+1. Segunda-feira — Bike Recovery + Cadência + força upper/core
+A bike de segunda cumpriu o papel de giro leve, mas com um detalhe importante: decoupling de 11.5%, alto para um treino recovery de 1h. Como o NP foi baixo (155W) e a FC média ficou em 132bpm, isso sugere que a sessão não foi metabolicamente pesada, porém o sistema ainda não estava completamente assentado. Em treino leve, essa deriva geralmente aponta para uma combinação de fadiga residual, hidratação aquém do ideal, ambiente quente/abafado ou simplesmente baixa prontidão naquele dia.
+
+A força de upper/core no mesmo dia foi adequada e não deve ter interferido negativamente.
+
+Leitura prática:
+- segunda serviu mais para restaurar movimento do que para gerar adaptação;
+- a deriva alta impede chamar esse treino de “recuperação perfeita”, mas não o transforma em problema;
+- boa decisão manter intensidade baixa.
+
+2. Terça-feira — Run Z2 Controlado + força upper/core
+Foi um dos melhores sinais da semana. Corrida de 45min, 6.2km, 35 TSS, com VI 1.02, EF 2.37, decoupling de apenas 2.8%, FC média 141bpm e cadência 173spm. Esse pacote é muito bom.
+
+O que isso mostra:
+- boa estabilidade aeróbia na corrida fácil;
+- mecânica preservada, sem desorganização sob carga leve;
+- joelho aparentemente tolerando bem a dose atual;
+- pacing maduro, sem exagero logo cedo.
+
+Dado Garmin relevante:
+- cadência 173spm, exatamente dentro de um range funcional e eficiente para o André;
+- passada de 80cm, coerente com corrida controlada;
+- sensação subjetiva “ótimo” e RPE 2 confirmam que o treino ficou no lugar certo.
+
+Interpretação:
+quando a intensidade fica sob controle, a corrida está rodando limpa. Isso é um ótimo sinal para manter consistência rumo ao Troféu Brasil.
+
+3. Quarta-feira — Bike Z2 + SS Curto + natação
+Aqui apareceu o principal ponto de atenção da semana. O treino entregou só 43 TSS, abaixo do que um Z2 + SS bem encaixado deveria gerar, mas teve VI 1.22 e decoupling de 17.1%, ambos altos. O NP foi apenas 161W, muito distante de um estímulo de sweet spot real para quem tem FTP de 265W.
+
+Isso sugere que, na prática, o treino não entrou como bloco de qualidade. Ficou mais para uma sessão quebrada, com oscilação excessiva de esforço e custo fisiológico desproporcional ao resultado. É o clássico treino que não é duro o suficiente para gerar grande adaptação, mas também não é fluido o suficiente para ser barato.
+
+Causas prováveis:
+- fadiga residual ainda presente;
+- baixa consistência na execução dos blocos;
+- possível ambiente indoor abafado, elevando deriva cardíaca;
+- talvez nutrição/hidratação pré-treino aquém do ideal.
+
+A natação de 1500m entrou como manutenção. Não foi volumosa, mas foi útil para não zerar frequência.
+
+Leitura prática:
+- bike de quarta não foi ruim, mas foi ineficiente;
+- mais importante do que “fazer SS” nesta fase é fazer blocos que realmente entrem na zona certa sem degradar demais;
+- isso reforça a decisão de não empurrar carga agressiva na próxima semana.
+
+4. Quinta-feira — Run Threshold Controlado + força
+Esse foi o treino mais valioso da semana para leitura de capacidade atual. Foram 55min, 8.3km, 64 TSS, NP 405W, VI 1.05, EF 2.63, FC média 154bpm, pico 176bpm, cadência 172spm. A mecânica ficou estável, mas o decoupling foi 14.2%, alto para um treino controlado.
+
+O que isso quer dizer:
+- houve capacidade de produzir o estímulo de qualidade;
+- a corrida não desmontou mecanicamente;
+- porém o custo cardiovascular subiu demais ao longo da sessão.
+
+Isso aponta para duas coisas ao mesmo tempo:
+1. o motor consegue entregar trabalho de limiar;
+2. a resistência para sustentar esse trabalho ainda está limitada pelo estado de recuperação e pela robustez aeróbia sob carga acumulada.
+
+Dado Garmin relevante:
+- cadência permaneceu boa em 172spm, o que é ótimo porque mostra que a piora não veio por colapso técnico;
+- passada de 87cm sugere boa sustentação de ritmo para o padrão do André;
+- sensação subjetiva foi boa, o que mostra que ele tolerou o treino melhor do que os marcadores cardiovasculares isolados sugerem.
+
+Interpretação prática:
+este treino reforça que o limiar está funcional, mas o corpo ainda responde com deriva alta quando a sessão exige sustentação. Então o trabalho de qualidade deve continuar, porém em dose enxuta, sem procurar heroísmo.
+
+5. Sexta-feira — Bike Endurance Solto
+Treino simples e bem executado: 46min, 28 TSS, NP 159W, VI 1.05 e decoupling 7.0%. Não é perfeito, mas já bem melhor que na quarta. A FC média de 119bpm indica baixo custo cardiovascular.
+
+Leitura prática:
+- bom treino de manutenção e soltura;
+- confirma que, com intensidade menor e expectativa menor, a resposta volta a ficar estável;
+- sinal útil para a montagem da próxima semana: mais vale acertar sessões simples do que insistir em blocos que saem caros demais.
+
+Leitura integrada das modalidades
+
+Corrida
+A corrida foi o melhor componente da semana. Tanto no Z2 de terça quanto no threshold de quinta, a cadência ficou estável na faixa 172-173spm, o que é um excelente marcador de economia e organização mecânica. O joelho, pelos dados disponíveis, não mostrou sinal de alarme. O problema não está na técnica base da corrida, e sim no custo fisiológico quando a sessão sobe de exigência.
+
+Conclusão da corrida:
+- mantém boa capacidade de execução;
+- suporta 2 sessões/semana com segurança aparente no contexto atual;
+- ainda pede cautela em progressão de volume ou densidade.
+
+Bike
+A bike ficou abaixo do ideal em qualidade real. Houve bastante discrepância entre o que estava no papel e o que entrou fisiologicamente. O treino de quarta é o melhor exemplo disso. Isso não significa regressão. Significa apenas que nesta semana o sistema não estava pronto para transformar intenção de qualidade em qualidade de verdade.
+
+Conclusão da bike:
+- base aeróbia segue presente;
+- qualidade precisa ser mais cirúrgica do que volumosa nesta transição para a prova;
+- melhor um estímulo limpo e curto do que um SS mal encaixado.
+
+Natação
+Volume baixo, mas presença mínima mantida. Como o foco maior até o Troféu Brasil é chegar inteiro, a natação nesta semana cumpriu papel de manutenção. Ainda assim, idealmente a próxima semana precisa ter duas entradas para não perder sensibilidade de água.
+
+Força
+Boa frequência. Upper/core segue fazendo sentido. Nesta fase, força precisa manter estrutura e postura, não gerar fadiga residual desnecessária.
+
+Causas centrais da resposta da semana
+1. Fadiga residual das semanas anteriores ainda presente, confirmada por HRV abaixo do baseline.
+2. Estado de recuperação apenas parcial, com sono aceitável, mas não excelente o suficiente para suportar build agressivo.
+3. Sessões de bike que custaram mais do que renderam, sobretudo em ambiente possivelmente indoor/abafado.
+4. Boa organização mecânica na corrida, o que evitou que a semana se tornasse problemática mesmo com deriva alta em treino de qualidade.
+5. Momento do calendário favorecendo consolidação, não acúmulo tardio de carga.
+
+Decisão de coaching
+HOLD.
+
+Não é semana para STEP BACK duro, porque não houve deterioração importante, nem sinal claro de necessidade de freada brusca. Também não é PUSH, porque os marcadores fisiológicos e a qualidade real da bike não sustentam isso. HOLD aqui significa consolidar forma, manter duas corridas úteis, preservar a natação, usar a bike como vetor principal de estímulo, mas com dose mais inteligente e mais específica.
+
+Ajustes práticos para a próxima semana
+1. Entrar em semana 13/04-19/04 como build moderado com início de taper funcional, não como tentativa de recuperar TSS perdido.
+2. Manter duas corridas apenas:
+- uma corrida curta Z2 com strides ou bloco leve de ritmo;
+- uma corrida específica controlada, sem exagerar no tempo total em Z4.
+3. Fazer duas sessões de natação para manter sensibilidade técnica.
+4. Concentrar a bike em:
+- um giro regenerativo/ativação;
+- um treino principal com blocos curtos e limpos em SS ou ritmo de prova;
+- um tijolo controlado no sábado;
+- um endurance moderado no domingo, sem transformar em longão exaustivo.
+5. Força continuar upper/core e reduzir qualquer chance de sobrar fadiga de perna para a corrida.
+6. Hidratação e ventilação caprichadas nos treinos de bike indoor. A deriva cardíaca sugere que esse detalhe está pesando.
+7. Se HRV cair para &lt;=40ms ou se FC de repouso subir para 52+ com sensação ruim, reduzir imediatamente 20-30% do treino do dia.
+
+Plano da próxima semana — 13/04/2026 a 19/04/2026
+Objetivo da semana: consolidar forma para o Troféu Brasil, manter sensação de ritmo, preservar joelho e chegar na semana da prova com frescor.
+
+Estratégia do microciclo:
+- segunda: bike recovery + força upper/core
+- terça: corrida Z2 com strides + força upper/core
+- quarta: bike principal com Z2 e blocos curtos de SS + natação base
+- quinta: corrida específica curta em threshold controlado + força upper/core
+- sexta: bike leve + natação técnica/base
+- sábado: tijolo curto e controlado, com bike em Z2/ritmo de prova e corrida curta estável
+- domingo: endurance moderado em bike ou corrida curta opcional somente se joelho estiver 0/10; preferência por bike nesta semana
+
+Direção de carga:
+- semana deve ficar moderada, suficiente para manter o CTL estável ou com leve queda estratégica;
+- evitar qualquer sessão “épica”;
+- foco total em qualidade que entra limpa.
+
+Resumo final do coach
+O saldo da semana é melhor do que a compliance crua sugere. O corpo não pediu agressão, e os dados mostram isso com clareza. Ainda assim, a corrida saiu organizada, o joelho pareceu comportado e houve treino útil suficiente para manter a engrenagem andando. O caminho mais inteligente agora é afinar, não forçar. A prova vai premiar frescor, estabilidade e execução madura, não TSS acumulado na marra na última hora.</div>
+    </div>
+  </section>
+
+  <section class="card section">
+    <h2>Atividades da Semana</h2>
+    
+  <div class="activity-card activity-ride">
+    <div class="activity-title">
+      <div class="activity-icon ride"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17l4-7h6l4 7M12 10V6l3-2"/></svg></div>
+      <div>
+        <div class="activity-name">Bike - Recovery + Cadência</div>
+        <div class="activity-date">2026-03-30</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">1h00</div><div class="label">Duração</div></div><div class="metric"><div class="value">23.7km</div><div class="label">Distância</div></div><div class="metric"><div class="value">35</div><div class="label">TSS</div></div><div class="metric"><div class="value">157W</div><div class="label">NP</div></div><div class="metric"><div class="value">1.05</div><div class="label">VI</div></div><div class="metric"><div class="value">1.24</div><div class="label">EF</div></div><div class="metric"><div class="value">5.4%</div><div class="label">Decoupling</div></div><div class="metric"><div class="value">127 bpm</div><div class="label">FC Média</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-strength">
+    <div class="activity-title">
+      <div class="activity-icon strength"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v4M18 4v4M4 6h4M16 6h4M8 6h8v8a4 4 0 01-8 0V6z"/></svg></div>
+      <div>
+        <div class="activity-name">Força - Upper Body + Core</div>
+        <div class="activity-date">2026-03-30</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">1h00</div><div class="label">Duração</div></div><div class="metric"><div class="value">17</div><div class="label">TSS</div></div><div class="metric"><div class="value">97 bpm</div><div class="label">FC Média</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-run">
+    <div class="activity-title">
+      <div class="activity-icon run"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4a1 1 0 100-2 1 1 0 000 2zM6 20l2-7 3 3 2-5 5 3"/></svg></div>
+      <div>
+        <div class="activity-name">Tremembé - Run - Z2 Controlado</div>
+        <div class="activity-date">2026-03-31</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">45min</div><div class="label">Duração</div></div><div class="metric"><div class="value">6.5km</div><div class="label">Distância</div></div><div class="metric"><div class="value">48</div><div class="label">TSS</div></div><div class="metric"><div class="value">390W</div><div class="label">NP</div></div><div class="metric"><div class="value">1.02</div><div class="label">VI</div></div><div class="metric"><div class="value">2.69</div><div class="label">EF</div></div><div class="metric"><div class="value">0.4%</div><div class="label">Decoupling</div></div><div class="metric"><div class="value">145 bpm</div><div class="label">FC Média</div></div><div class="metric"><div class="value">174 spm</div><div class="label">Cadência</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-strength">
+    <div class="activity-title">
+      <div class="activity-icon strength"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v4M18 4v4M4 6h4M16 6h4M8 6h8v8a4 4 0 01-8 0V6z"/></svg></div>
+      <div>
+        <div class="activity-name">Técnica de Corrida - Drills + Stiffness</div>
+        <div class="activity-date">2026-03-31</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">54min</div><div class="label">Duração</div></div><div class="metric"><div class="value">5</div><div class="label">TSS</div></div><div class="metric"><div class="value">75 bpm</div><div class="label">FC Média</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-ride">
+    <div class="activity-title">
+      <div class="activity-icon ride"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17l4-7h6l4 7M12 10V6l3-2"/></svg></div>
+      <div>
+        <div class="activity-name">Bike - Z2 + Sweet Spot Curto</div>
+        <div class="activity-date">2026-04-01</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">1h11</div><div class="label">Duração</div></div><div class="metric"><div class="value">35.8km</div><div class="label">Distância</div></div><div class="metric"><div class="value">57</div><div class="label">TSS</div></div><div class="metric"><div class="value">184W</div><div class="label">NP</div></div><div class="metric"><div class="value">1.08</div><div class="label">VI</div></div><div class="metric"><div class="value">1.37</div><div class="label">EF</div></div><div class="metric"><div class="value">-0.4%</div><div class="label">Decoupling</div></div><div class="metric"><div class="value">134 bpm</div><div class="label">FC Média</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-swim">
+    <div class="activity-title">
+      <div class="activity-icon swim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12c1-1 2-1 3 0s2 1 3 0 2-1 3 0 2 1 3 0 2-1 3 0M2 17c1-1 2-1 3 0s2 1 3 0 2-1 3 0 2 1 3 0 2-1 3 0"/></svg></div>
+      <div>
+        <div class="activity-name">Natação - Base 1800m</div>
+        <div class="activity-date">2026-04-01</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">38min</div><div class="label">Duração</div></div><div class="metric"><div class="value">2000m</div><div class="label">Distância</div></div><div class="metric"><div class="value">22</div><div class="label">TSS</div></div><div class="metric"><div class="value">122 bpm</div><div class="label">FC Média</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-strength">
+    <div class="activity-title">
+      <div class="activity-icon strength"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v4M18 4v4M4 6h4M16 6h4M8 6h8v8a4 4 0 01-8 0V6z"/></svg></div>
+      <div>
+        <div class="activity-name">Força</div>
+        <div class="activity-date">2026-04-01</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">1min</div><div class="label">Duração</div></div><div class="metric"><div class="value">88 bpm</div><div class="label">FC Média</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-run">
+    <div class="activity-title">
+      <div class="activity-icon run"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4a1 1 0 100-2 1 1 0 000 2zM6 20l2-7 3 3 2-5 5 3"/></svg></div>
+      <div>
+        <div class="activity-name">Tremembé - Run - Z2 + Strides</div>
+        <div class="activity-date">2026-04-02</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">51min</div><div class="label">Duração</div></div><div class="metric"><div class="value">7.3km</div><div class="label">Distância</div></div><div class="metric"><div class="value">52</div><div class="label">TSS</div></div><div class="metric"><div class="value">380W</div><div class="label">NP</div></div><div class="metric"><div class="value">1.02</div><div class="label">VI</div></div><div class="metric"><div class="value">2.68</div><div class="label">EF</div></div><div class="metric"><div class="value">4.6%</div><div class="label">Decoupling</div></div><div class="metric"><div class="value">142 bpm</div><div class="label">FC Média</div></div><div class="metric"><div class="value">174 spm</div><div class="label">Cadência</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-strength">
+    <div class="activity-title">
+      <div class="activity-icon strength"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v4M18 4v4M4 6h4M16 6h4M8 6h8v8a4 4 0 01-8 0V6z"/></svg></div>
+      <div>
+        <div class="activity-name">Força - Upper Body + Core</div>
+        <div class="activity-date">2026-04-02</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">58min</div><div class="label">Duração</div></div><div class="metric"><div class="value">8</div><div class="label">TSS</div></div><div class="metric"><div class="value">84 bpm</div><div class="label">FC Média</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-ride">
+    <div class="activity-title">
+      <div class="activity-icon ride"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17l4-7h6l4 7M12 10V6l3-2"/></svg></div>
+      <div>
+        <div class="activity-name">Bike - Endurance Z2</div>
+        <div class="activity-date">2026-04-03</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">1h00</div><div class="label">Duração</div></div><div class="metric"><div class="value">17.7km</div><div class="label">Distância</div></div><div class="metric"><div class="value">30</div><div class="label">TSS</div></div><div class="metric"><div class="value">144W</div><div class="label">NP</div></div><div class="metric"><div class="value">1.17</div><div class="label">VI</div></div><div class="metric"><div class="value">1.27</div><div class="label">EF</div></div><div class="metric"><div class="value">19.5%</div><div class="label">Decoupling</div></div><div class="metric"><div class="value">113 bpm</div><div class="label">FC Média</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-ride">
+    <div class="activity-title">
+      <div class="activity-icon ride"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M5 17l4-7h6l4 7M12 10V6l3-2"/></svg></div>
+      <div>
+        <div class="activity-name">T2 - Bike + Corrida Controlado</div>
+        <div class="activity-date">2026-04-04</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">58min</div><div class="label">Duração</div></div><div class="metric"><div class="value">24.4km</div><div class="label">Distância</div></div><div class="metric"><div class="value">36</div><div class="label">TSS</div></div><div class="metric"><div class="value">161W</div><div class="label">NP</div></div><div class="metric"><div class="value">1.13</div><div class="label">VI</div></div><div class="metric"><div class="value">1.28</div><div class="label">EF</div></div><div class="metric"><div class="value">11.2%</div><div class="label">Decoupling</div></div><div class="metric"><div class="value">126 bpm</div><div class="label">FC Média</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-run">
+    <div class="activity-title">
+      <div class="activity-icon run"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4a1 1 0 100-2 1 1 0 000 2zM6 20l2-7 3 3 2-5 5 3"/></svg></div>
+      <div>
+        <div class="activity-name">Tremembé Corrida</div>
+        <div class="activity-date">2026-04-04</div>
+      </div>
+      <div class="activity-badge quality-ok">Carga leve</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">19min</div><div class="label">Duração</div></div><div class="metric"><div class="value">3.0km</div><div class="label">Distância</div></div><div class="metric"><div class="value">22</div><div class="label">TSS</div></div><div class="metric"><div class="value">394W</div><div class="label">NP</div></div><div class="metric"><div class="value">1.02</div><div class="label">VI</div></div><div class="metric"><div class="value">2.58</div><div class="label">EF</div></div><div class="metric"><div class="value">4.6%</div><div class="label">Decoupling</div></div><div class="metric"><div class="value">153 bpm</div><div class="label">FC Média</div></div><div class="metric"><div class="value">178 spm</div><div class="label">Cadência</div></div>
+    </div>
+  </div>
+  <div class="activity-card activity-run">
+    <div class="activity-title">
+      <div class="activity-icon run"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4a1 1 0 100-2 1 1 0 000 2zM6 20l2-7 3 3 2-5 5 3"/></svg></div>
+      <div>
+        <div class="activity-name">Tremembé - Run - Longão Z2 Controlado</div>
+        <div class="activity-date">2026-04-05</div>
+      </div>
+      <div class="activity-badge quality-high">Carga moderada</div>
+    </div>
+    <div class="activity-metrics">
+      <div class="metric"><div class="value">1h00</div><div class="label">Duração</div></div><div class="metric"><div class="value">8.7km</div><div class="label">Distância</div></div><div class="metric"><div class="value">61</div><div class="label">TSS</div></div><div class="metric"><div class="value">380W</div><div class="label">NP</div></div><div class="metric"><div class="value">1.02</div><div class="label">VI</div></div><div class="metric"><div class="value">2.50</div><div class="label">EF</div></div><div class="metric"><div class="value">6.3%</div><div class="label">Decoupling</div></div><div class="metric"><div class="value">152 bpm</div><div class="label">FC Média</div></div><div class="metric"><div class="value">175 spm</div><div class="label">Cadência</div></div>
+    </div>
+  </div>
+  </section>
+
+</div>
+</body>
+</html>
